@@ -41,22 +41,24 @@ public class Person {
 
     public double calculateBMIWithOnlyWeightInPoundsAndHeightInInches(float userInputWeightInPounds,
                                                                       float userInputHeightInInches){
-
+        if ((userInputWeightInPounds <= 0) || (userInputHeightInInches <= 0)){
+            return 0;
+        }
         weightInPounds = userInputWeightInPounds;
         heightInInches = userInputHeightInInches;
-        bmi = (weightInPounds * 703)/Math.pow(2, heightInInches);
+        bmi = (weightInPounds * 703)/Math.pow(heightInInches, 2);
         return bmi;
     }
 
 
     public double calculateBMIWithOnlyWeightInKilogramsAndHeightInMeters(float userInputWeightInKilograms,
-                                                                    float userInputHeightInInches) {
+                                                                    float userInputHeightInMeters) {
+        if ((userInputWeightInKilograms <= 0) || (userInputHeightInMeters <= 0)){
+            return 0;
+        }
         weightInKilograms = userInputWeightInKilograms;
-        heightInInches = userInputHeightInInches;
-        bmi = weightInKilograms / Math.pow(2,heightInInches);
+        heightInMeters = userInputHeightInMeters;
+        bmi = weightInKilograms / Math.pow(heightInMeters, 2);
         return bmi;
-    }
-
-    public double calculateBMI(double calculateBMIWithOnlyWeightInPoundsAndHeightInInches) {
     }
 }
