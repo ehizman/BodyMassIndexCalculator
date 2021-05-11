@@ -21,11 +21,11 @@ public class Account {
 
     public void withdraw(double amountToWithdraw, short userInput) {
         if (userInput != accountPin){
-            System.out.println("Sorry, invalid pin!!!");
+            System.out.println("Sorry, pin is not valid!!!");
         }
         else{
             if (amountToWithdraw < 0) {
-                System.out.println("Sorry, system cannot withdraw negative amounts");
+                System.out.println("Sorry, system cannot withdraw negative amount");
             }
             if (amountToWithdraw > accountBalance ){
                 System.out.println("Sorry, withdrawal amount is more than current balance");

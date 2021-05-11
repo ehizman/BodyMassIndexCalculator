@@ -1,25 +1,24 @@
 package africa.tutored.chaptertwoClass;
 
 public class Person {
-    float weightInPounds;
-    float heightInInches;
-    double heightInMeters;
-    double weightInKilograms;
-    double bmi;
+    private double weightInPounds;
+    private double heightInInches;
+    private double heightInMeters;
+    private double weightInKilograms;
 
-    public void setWeightInPounds(float weightInPounds) {
+    public void setWeightInPounds(double weightInPounds) {
         this.weightInPounds = weightInPounds;
     }
 
-    public float getWeightInPounds() {
+    public double  getWeightInPounds() {
         return weightInPounds;
     }
 
-    public void setHeightInInches(float heightInInches) {
+    public void setHeightInInches(double heightInInches) {
         this.heightInInches = heightInInches;
     }
 
-    public float getHeightInInches() {
+    public double getHeightInInches() {
         return heightInInches;
     }
 
@@ -39,26 +38,19 @@ public class Person {
         return weightInKilograms;
     }
 
-    public double calculateBMIWithOnlyWeightInPoundsAndHeightInInches(float userInputWeightInPounds,
-                                                                      float userInputHeightInInches){
-        if ((userInputWeightInPounds <= 0) || (userInputHeightInInches <= 0)){
-            return 0;
+    public double calculateBMI(double firstParameter, double secondParameter) {
+        double bmi;
+        if ((firstParameter == this.weightInPounds) && (secondParameter == this.heightInInches)) {
+            bmi = (firstParameter * 703)/Math.pow(secondParameter,2);
+            return  bmi;
         }
-        weightInPounds = userInputWeightInPounds;
-        heightInInches = userInputHeightInInches;
-        bmi = (weightInPounds * 703)/Math.pow(heightInInches, 2);
-        return bmi;
-    }
-
-
-    public double calculateBMIWithOnlyWeightInKilogramsAndHeightInMeters(float userInputWeightInKilograms,
-                                                                    float userInputHeightInMeters) {
-        if ((userInputWeightInKilograms <= 0) || (userInputHeightInMeters <= 0)){
-            return 0;
+        if ((firstParameter == this.weightInKilograms) && (secondParameter == this.heightInMeters)) {
+            bmi = firstParameter/Math.pow(secondParameter,2);
+            return bmi;
         }
-        weightInKilograms = userInputWeightInKilograms;
-        heightInMeters = userInputHeightInMeters;
-        bmi = weightInKilograms / Math.pow(heightInMeters, 2);
-        return bmi;
+        else {
+            bmi = 0;
+            return bmi;
+        }
     }
 }
