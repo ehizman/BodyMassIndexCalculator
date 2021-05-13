@@ -1,3 +1,1 @@
-# mobileBankingApp
-# BodyMassIndexCalculator
 # BodyMassIndexCalculator

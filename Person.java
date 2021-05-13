@@ -26,7 +26,7 @@ public class Person {
         this.heightInMeters = heightInMeters;
     }
 
-    public double getHeightInMeters() {
+    public  double getHeightInMeters() {
         return heightInMeters;
     }
 
@@ -46,11 +46,10 @@ public class Person {
         }
         if ((firstParameter == this.weightInKilograms) && (secondParameter == this.heightInMeters)) {
             bmi = firstParameter/Math.pow(secondParameter,2);
-            return bmi;
         }
         else {
             bmi = 0;
-            return bmi;
         }
+        return bmi;
     }
 }
